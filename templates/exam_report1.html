@@ -1,0 +1,82 @@
+{% include 'base.html' %}
+<center><h2> Student Marks Report</h2></center>
+<div class="pagination justify-content-center">
+    {% if user_exam_report1.has_previous %}
+        <a href="?page={{ user_exam_report1.previous_page_number }}"  class="page-link" tabindex="-1">Previous</a>
+    {% endif%}
+
+    {% for num in user_exam_report1.paginator.page_range%}
+        {% if user_exam_report1.number == num %}
+            <a href="?page={{num}}" class="page-item page-link"><font color="orange" > {{num}}</font></a>
+        {% else %}
+            <a href="?page={{num}}" class="page-link">{{num}}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if user_exam_report1.has_next %}
+        <a href="?page={{ user_exam_report1.next_page_number }}" class="page-link">Next</a>
+    {% endif%}
+</div>
+<!-- Pagination Ends -->
+<table align="right" class="table table-striped table-hover" border="2">
+    <tr>
+        <th>Subject Code</th>
+        <th>Subject Name</th>
+    </tr>
+    {% for j in subs%}
+        <tr>
+            {% for k in j %}
+                <td>{{k}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+{% for i in user_exam_report1 %}
+
+<font size="5"><b> {{i.exam_type}} </b></font>
+<table border="2" class="table table-striped table-hover">
+    <tr>
+        <th class="thead-dark">Subject Codes</th><th class="thead-dark">Marks</th>
+    </tr>
+    <tr>
+        <td>Subject 1:</td><td>{{i.s1 }}</td>
+    </tr>
+
+    <tr>
+        <td>Subject 2:</td><td>{{i.s2 }}</td>
+    </tr>
+    <tr>
+        <td>Subject 3:</td><td>{{i.s3 }}</td>
+    </tr>
+    <tr>
+        <td>Subject 4:</td><td>{{i.s4 }}</td>
+    </tr>
+    <tr>
+        <td>Subject 5:</td><td>{{i.s5 }}</td>
+    </tr>
+    <tr>
+        <td>Subject 6:</td><td>{{i.s6 }}</td>
+    </tr>
+    <tr>
+        <td>Subject 7:</td><td>{{i.s7 }}</td>
+    </tr>
+    <tr>
+        <td>Subject 8:</td><td>{{i.s8 }}</td>
+    </tr>
+    <tr>
+        <td>Subject 9:</td><td>{{i.s9 }}</td>
+    </tr>
+    <tr>
+        <td>Subject 10:</td><td>{{i.s10 }}</td>
+    </tr>
+    <tr>
+
+        <td>Average :</td><td>{{i.avg}}</td>
+
+    </tr>
+
+</table>
+
+{% endfor %}
+{% include 'footer.html' %}

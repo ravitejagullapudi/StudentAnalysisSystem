@@ -1,0 +1,20 @@
+{% include 'base.html' %}
+<h3>Type Registered Number and Select Exam-type To Post Marks </h3>
+<!--redirect for post_report by regno-->
+
+<form method="POST">
+    {% csrf_token %}
+        <center>
+        <font size="4" color="#ff0000">{{error}}</font></center>
+    <h3>Registration no: <input type="text" name="regno" placeholder="Enter Registration Number" required></h3>
+    <h3>Exam Type : <select name="exam_type">
+        <option value="MID-1(SEM-1)">MID-1</option>
+        <option value="MID-2(SEM-1)">MID-2</option>
+
+
+    </select> </h3>
+
+    <center><input type="submit" value="Proceed"></center>
+</form>
+
+{% include 'footer2.html' %}

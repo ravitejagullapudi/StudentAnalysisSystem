@@ -1,0 +1,53 @@
+{% include 'base.html' %}
+<center><h2>Student Performance Report</h2></center>
+<!-- Pagination -->
+<div class="pagination justify-content-center">
+    {% if user_performance.has_previous %}
+        <a href="?page={{ user_performance.previous_page_number }}"  class="page-link" tabindex="-1">Previous</a>
+    {% endif%}
+
+    {% for num in user_performance.paginator.page_range%}
+        {% if user_performance.number == num %}
+            <a href="?page={{num}}" class="page-item page-link"><font color="orange" > {{num}}</font></a>
+        {% else %}
+            <a href="?page={{num}}" class="page-link">{{num}}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if user_performance.has_next %}
+        <a href="?page={{ user_performance.next_page_number }}" class="page-link">Next</a>
+    {% endif%}
+</div>
+<!-- Pagination Ends -->
+
+{% for i in user_performance %}
+<h2>Posted Date:  {{i.date|date}}</h2>
+<br>
+    <table border="2" class="table table-striped table-hover">
+        <tr>
+            <th>Subject </th>
+            <th>Attendance </th>
+            <th>Regd no</th>
+            <th>Listening Skills</th>
+            <th>Learning Attitude</th>
+            <th>Assignment Submission </th>
+            <th>Communication Skills</th>
+            <th>Collaboration With Students</th>
+            <th>Others If Mention </th>
+        </tr>
+        <tr align="center">
+            <th>{{i.sub_name}}</th>
+            <td>{{i.attendance}}</td>
+            <td>{{i.regno}}</td>
+            <td>{{i.listening_skills }}</td>
+            <td>{{i.learning_attitude}}</td>
+            <td>{{i.assignment_submission}}</td>
+            <td>{{i.communication_skills}}</td>
+            <td>{{i.collaboration_with_students}}</td>
+            <td>{{i.others_if_mention }}</td>
+        </tr>
+    </table>
+{% endfor %}
+
+{% include 'footer.html' %}
+ 

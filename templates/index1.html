@@ -1,0 +1,36 @@
+{% include 'base.html' %}
+
+
+
+<table>
+    <tr>
+        <td>Name:</td><td>{{user_profile.name}}</td>
+    </tr>
+    <tr>
+        <td>Regd no:</td><td>{{user_profile.regno}}</td>
+    </tr>
+    <tr>
+        <td>Year:</td><td>{{user_profile.year }}</td>
+    </tr>
+    <tr>
+        <td>Department:</td><td>{{dept.dept_name}}</td>
+    </tr>
+    <tr>
+        <td>Section:</td><td>{{user_profile.section}}</td>
+    </tr>
+    <tr>
+        <td>Student Mobile:</td><td>{{user_profile.student_mobile}}</td>
+    </tr>
+    <tr>
+        <td>Student Email:</td><td>{{user_profile.student_email}}</td>
+    </tr>
+    <tr>
+        <td>Parent Email:</td><td>{{user_profile.parent_email}}</td>
+    </tr>
+    <tr>
+        <td>Parent Mobile:</td><td>{{user_profile.parent_mobile}}</td>
+    </tr>
+</table>
+
+
+{% include 'footer.html' %}

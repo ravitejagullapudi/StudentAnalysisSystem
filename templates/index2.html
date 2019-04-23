@@ -1,0 +1,44 @@
+{% include 'base1.html' %}
+
+
+<font size="5"><b>Your Info : </b></font>
+ <br>
+    <br>
+<table>
+    <tr>
+        <td>Username:</td><td>{{user_profile.username}}</td>
+    </tr>
+    <tr>
+        <td>Firstname</td><td>{{user_profile.first_name}}</td>
+    </tr>
+    <tr>
+        <td>Lastname</td><td>{{user_profile.last_name}}</td>
+    </tr>
+    <tr>
+        <td>Email:</td><td>{{user_profile.email}}</td>
+    </tr>
+    <tr>
+        <td>Mobile:</td><td>{{user_profile1.mobile}}</td>
+    </tr>
+    <tr>
+        <td>Department:</td><td>{{dept.dept_name}}</td>
+    </tr>
+    <tr>
+
+        <td>Faculty-ID:</td>
+        <td>{{teac_id}}</td>
+    </tr>
+
+</table>
+
+<font size="5"><b>Your Dealing Subjects : </b></font>
+<br>
+<br>
+<font size="3">
+    {% for i in faculty %}
+        <li>{{i.sub_name}}</li>
+    {% endfor %}
+</font>
+
+
+{% include 'footer2.html' %}

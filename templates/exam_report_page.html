@@ -1,0 +1,16 @@
+{% include 'base.html' %}
+
+<form method="POST">
+    {% csrf_token %}
+    <h2>Select Subject to See Recent Entries of That Particular Subject</h2>
+    <h2>Subject : <select name="subject">
+            {% for i in sub %}
+            <option value="{{i.sub_code}}">{{i.sub_name}}</option>
+               {% endfor %}
+        </select>
+    </h2>
+    <br>
+    <button type="submit">Proceed</button>
+</form>
+
+{% include 'footer2.html' %}

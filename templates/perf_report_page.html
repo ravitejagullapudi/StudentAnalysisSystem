@@ -1,0 +1,16 @@
+{% include 'base.html' %}
+
+<form method="POST">
+    {% csrf_token %}
+    <h2>Select Subject to See Recent Entries of That Particular Regno</h2>
+    <h2>Subject : <select name="regno">
+            {% for i in perf %}
+            <option value="{{i}}">{{i}}</option>
+               {% endfor %}
+        </select>
+    </h2>
+    <br>
+    <button type="submit">Proceed</button>
+</form>
+
+{% include 'footer2.html' %}

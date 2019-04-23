@@ -1,0 +1,35 @@
+{% include 'base.html' %}
+{% load static %}
+
+<div class="container">
+
+  <h2>Discussion Form</h2>
+
+  <div class="accordion">
+      {% for i in Q %}
+      <div class="accordion-item">
+      <a>{{ i.query }}</a>
+      <div class="content">
+        <p>{{ i.answer}} </p>
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+
+  <br>
+  <h2>Ask a Question??</h2>
+  <form method="POST">
+    {% csrf_token %}
+     <div class="faq">
+      <input type="email" required name="email"><br>
+     <textarea name="query" placeholder="Enter your Query"></textarea>
+       <input type="submit" value="Submit">
+     </div>
+  </form>
+
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+  <script  src="{% static 'assets/js/faq.js'%}"></script>
+
+</div>
+
+{% include 'footer1.html' %}

@@ -1,0 +1,21 @@
+{% include 'base.html' %}
+
+
+<table>
+        <tr>
+            <td>REG.NO</td>
+            <td>SUBJECT</td>
+            <td>POSTED DATE</td>
+        </tr>
+        {% for i in perf %}
+        <tr>
+            <td><a href="{% url 'perf_details' i.id%}">{{i.regno}}</a></td>
+            <td>{{i.sub_name}}</td>
+            <td>{{i.date}}</td>
+        </tr>
+
+        {% endfor %}
+</table>
+
+
+{% include 'footer2.html' %}

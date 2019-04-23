@@ -1,0 +1,17 @@
+{% include 'base.html' %}
+<h3>Recently Posted Enteries Of Entered Subject :</h3>
+<table class="table table-hover table-striped" >
+        <tr>
+            <th>REG.NO</th>
+            <th>Marks</th>
+            <th>Exam_type</th>
+        </tr>
+        {% for i in s %}
+        <tr>
+            {% for j in i %}
+            <td>{{j}}</td>
+    {% endfor %}
+        </tr>
+        {% endfor %}
+</table>
+{% include 'footer2.html' %}

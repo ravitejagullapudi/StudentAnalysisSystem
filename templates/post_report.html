@@ -1,0 +1,51 @@
+{% include 'base.html' %}
+
+<font size="6"> <center><b>Post Report Form</b></center></font><br>
+
+<form method="POST">
+    {% csrf_token %}
+    {% for i in sub %}
+    <h2>{{i}}:&nbsp;&nbsp;&nbsp;<input required type='number' name="{{i}}" style="border-radius:5px" placeholder="Enter Marks"></h2>
+    {% endfor %}
+    <button type="submit">POST</button>
+    <!--<table border="10px">
+        <tr>
+            <td><h2>Subject1:</h2></td>
+            <td><input required type='number' name="s1" style="border-radius:5px"></td><br>
+        </tr>
+        <tr>
+            <td><h2>Subject2:</h2></td>
+            <td><input required type='number' name="s2" style="border-radius:5px"></td>
+        </tr>
+        <tr>
+            <td><h2>Subject3:</h2></td>
+            <td><input required type='number' name="s3" style="border-radius:5px"></td>
+        </tr>
+        <tr>
+            <td><h2>Subject4:</h2></td>
+            <td><input required type='number' name="s4" style="border-radius:5px"></td>
+        </tr>
+        <tr>
+            <td><h2>Subject5:</h2></td>
+            <td><input required type='number' name="s5" style="border-radius:5px"></td>
+        </tr>
+        <tr>
+            <td><h2>Subject6:</h2></td>
+            <td><input required type='number' name="s6" style="border-radius:5px"></td>
+        </tr>
+        <tr>
+            <td><h2>Subject7:</h2></td>
+            <td><input required type='number' name="s7" style="border-radius:5px"></td>
+        </tr>
+        <tr>
+            <td><h2>Subject8:</h2></td>
+            <td><input required type='number' name="s8" style="border-radius:5px"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">POST</button></td>
+        </tr>
+
+    </table>-->
+</form>
+
+{% include 'footer2.html' %}
